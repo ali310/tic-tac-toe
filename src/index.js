@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { number } from "prop-types";
+import axios from 'axios';
 
 // function Square(props) {
 //   return (
@@ -197,6 +197,12 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6]
   ];
+
+  // axios.post('http://localhost:8080/Tic_Tac_Toe_BE-1.0-SNAPSHOT/move/winner', {squares}).then(res => {
+  //   console.log(res);
+  // });
+
+  axios.get('http://localhost:8080/Tic_Tac_Toe_BE-1.0-SNAPSHOT/move/winner').then(res => console.log(res));
 
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
